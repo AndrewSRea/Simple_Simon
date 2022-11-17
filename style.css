@@ -1,0 +1,25 @@
+/* 
+    background on `body` won't work with responsive SVG set as it is.
+    will have to do some research on how to put a background on an SVG `viewBox`.
+    meanwhile, keep the `background` measurements in comment for now.
+*/
+
+/* body {
+    background: radial-gradient(circle at bottom, rgba(75,0,90,1) 0%, rgba(255,0,255,1) 100%);
+} */
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

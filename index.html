@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Simon</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- http://thenewcode.com/744/Make-SVG-Responsive -->
+        <!-- <svg version="1.1" id="layer-1" xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
+            width="500px" height="500px" viewBox="0 0 500 500"
+            enable-background="new 0 0 500 500" xml:space="preserve"> -->
+        <!-- cleaning up the SVG makes it more responsive (it's also the way MDN does it --
+            except MDN uses `width` and `height`, not a `viewBox`) -->
+        <!-- <svg version="1.1" viewBox="0 0 500 500">
+                <circle fill="#f7941e" stroke="#231f20" stroke-width="10"
+                cx="250" cy="250" r="200" opacity="0.6" />
+             </svg> -->
+        <!-- Three more steps are needed to make it more responsive and compatible with
+             all browsers. -->
+        <!-- 1. Surround the SVG code with a <div> and add a `preserveAspectRatio`
+                attribute and class to the <svg> root element. This move the SVG illustration
+                to the top of its display container. To complete the presentation, we use a
+                variation of the old `absolute`ly-positioned-element-inside-a-relative-
+                container trick, with an offset padding (see CSS file). -->
+
+        <!-- ONE THING: The responsiveness on this is AMAZING! But find a way to make the diagram 
+             smaller to fit the screen. (Recalculate ALL measurements for a 400x400 viewBox?) 
+             ALSO, find out how to decrease the margins from the diagram to the edges of the screen. -->
+        <div class="svg-container">
+            <svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin" class="svg-content">
+
+                <!-- Yes, you can go smaller than "1" on stroke-widths with decimal numbers -->
+                <!-- outer circle -->
+                <circle fill="transparent" stroke="#000000" stroke-width="1" 
+                    cx="250" cy="250" r="200" />
+                <!-- inner logo circle -->
+                <circle fill="transparent" stroke="#000000" stroke-width="1"
+                    cx="250" cy="250" r="70" />
+
+                <!-- inner edge of buttons -->
+                <circle fill="transparent" stroke="#ff69b4" stroke-width="1" stroke-dasharray="3 2"
+                    cx="250" cy="250" r="80" />
+                <!-- outer edge of buttons -->
+                <circle fill="transparent" stroke="#add8e6" stroke-width="1" stroke-dasharray="3 2"
+                    cx="250" cy="250" r="190" />
+
+                <!-- these lines are for measurement; remove them when done -->
+                <line x1="250" y1="50" x2="250" y2="450" stroke="#000000" stroke-dasharray="3 2" stroke-width="1" />
+                <line x1="50" y1="250" x2="450" y2="250" stroke="#000000" stroke-dasharray="3 2" stroke-width="1" />
+
+                <!-- paths have to be recalcualted for the curves but WELL DONE!! -->
+
+                <!-- top left button -->
+                <path d="M 60 245 L 170 240" stroke="#000000" stroke-width="1"
+                    fill="transparent" />
+                <path d="M 245 60 L 240 170" stroke="#000000" stroke-width="1" />   <!-- incorporate both paths into one -->
+
+                <!-- bottom left button -->
+                <path d="M 60 255 L 170 260" stroke="#000000" stroke-width="1" />
+                <path d="M 240 330 L 245 440" stroke="#000000" stroke-width="1" />  <!-- incorporate both paths into one -->
+
+                <!-- top right button -->
+                <path d="M 330 240 L 440 245" stroke="#000000" stroke-width="1" />
+                <path d="M 255 60 L 260 170" stroke="#000000" stroke-width="1" />   <!-- incorporate both paths into one -->
+
+                <!-- bottom right button -->
+                <path d="M 330 260 L 440 255" stroke="#000000" stroke-width="1" />
+                <path d="M 260 330 L 255 440" stroke="#000000" stroke-width="1" />  <!-- incorporate both paths into one -->
+
+            </svg>
+        </div>
+    </body>
+</html>
+
+<!-- http://thenewcode.com/744/Make-SVG-Responsive -->
