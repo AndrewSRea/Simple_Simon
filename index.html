@@ -31,47 +31,78 @@
              smaller to fit the screen. (Recalculate ALL measurements for a 400x400 viewBox?) 
              ALSO, find out how to decrease the margins from the diagram to the edges of the screen. -->
         <div class="svg-container">
-            <svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin" class="svg-content">
-
-                <!-- Yes, you can go smaller than "1" on stroke-widths with decimal numbers -->
+            <svg version="1.1" viewBox="0 0 800 800" preserveAspectRation="xMinYMin" class="svg-content">
                 <!-- outer circle -->
                 <circle fill="transparent" stroke="#000000" stroke-width="1" 
-                    cx="250" cy="250" r="200" />
+                    cx="400" cy="240" r="220" />
                 <!-- inner logo circle -->
                 <circle fill="transparent" stroke="#000000" stroke-width="1"
-                    cx="250" cy="250" r="70" />
+                    cx="400" cy="240" r="80" />
 
                 <!-- inner edge of buttons -->
                 <circle fill="transparent" stroke="#ff69b4" stroke-width="1" stroke-dasharray="3 2"
-                    cx="250" cy="250" r="80" />
+                    cx="400" cy="240" r="90" />
                 <!-- outer edge of buttons -->
                 <circle fill="transparent" stroke="#add8e6" stroke-width="1" stroke-dasharray="3 2"
-                    cx="250" cy="250" r="190" />
-
+                    cx="400" cy="240" r="210" />
+                
                 <!-- these lines are for measurement; remove them when done -->
-                <line x1="250" y1="50" x2="250" y2="450" stroke="#000000" stroke-dasharray="3 2" stroke-width="1" />
-                <line x1="50" y1="250" x2="450" y2="250" stroke="#000000" stroke-dasharray="3 2" stroke-width="1" />
+                <line x1="400" y1="20" x2="400" y2="460" stroke="#000000" stroke-dasharray="3 2" stroke-width="1" />
+                <line x1="180" y1="240" x2="620" y2="240" stroke="#000000" stroke-dasharray="3 2" stroke-width="1" />
+                <!-- measurement for left button -->
+                <line x1="400" y1="240" x2="180" y2="20" stroke="#c167ff" stroke-width="1" stroke-dasharray="3 2" />
+                <line x1="400" y1="240" x2="180" y2="460" stroke="#c167ff" stroke-width="1" stroke-dasharray="3 2" />
+                <line x1="400" y1="240" x2="620" y2="20" stroke="#c167ff" stroke-width="1" stroke-dasharray="3 2" />
+                <line x1="400" y1="240" x2="620" y2="460" stroke="#c167ff" stroke-width="1" stroke-dasharray="3 2" />
 
-                <!-- paths have to be recalculated for the curves but WELL DONE!! -->
-
+                <!-- paths have to be recalculated for the corner curves but WELL DONE!! -->
                 <!-- top left button -->
-                <path d="M 60 245 L 170 240" stroke="#000000" stroke-width="1"
-                    fill="transparent" />
-                <path d="M 245 60 L 240 170" stroke="#000000" stroke-width="1" />   <!-- incorporate both paths into one -->
-                <path d="M 60 245 Q 78.5 78.5 245 60" stroke="#000000" stroke-width="1" fill="transparent" />
-                <path d="M 170 240 Q 182 182 240 170" stroke="#000000" stroke-width="1" fill="transparent" />
-
+                <!-- bottom edge -->
+                <path d="M 190 230 L 310 225" stroke="#000000" stroke-width="1" fill="transparent" />
+                <!-- top right edge -->
+                <path d="M 390 30 L 385 150" stroke="#000000" stroke-width="1" fill="transparent" />
+                <!-- outer edge -->
+                <path d="M 190 230 Q 211 51 390 30" stroke="#000000" stroke-width="1" fill="transparent" />
+                <circle cx="211" cy="51" r="2" fill="red" />
+                <!-- inner edge -->
+                <path d="M 310 225 Q 325 165 385 150" stroke="#000000" stroke-width="1" fill="transparent" />
+                <circle cx="325" cy="165" r="2" fill="red" />
+                
                 <!-- bottom left button -->
-                <path d="M 60 255 L 170 260" stroke="#000000" stroke-width="1" />
-                <path d="M 240 330 L 245 440" stroke="#000000" stroke-width="1" />  <!-- incorporate both paths into one -->
+                <!-- top edge -->
+                <path d="M 190 250 L 310 255" stroke="#000000" stroke-width="1" fill="transparent" />
+                <!-- bottom right edge -->
+                <path d="M 390 450 L 385 330"  stroke="#000000" stroke-width="1" fill="transparent" />
+                <!-- outer edge -->
+                <path d="M 190 250 Q 211 429 390 450" stroke="#000000" stroke-width="1" fill="transparent" />
+                <circle cx="211" cy="429" r="2" fill="red" />
+                <!-- inner edge -->
+                <path d="M 310 255 Q 325 315 385 330" stroke="#000000" stroke-width="1" fill="transparent" />
+                <circle cx="325" cy="315" r="2" fill="red" />
 
                 <!-- top right button -->
-                <path d="M 330 240 L 440 245" stroke="#000000" stroke-width="1" />
-                <path d="M 255 60 L 260 170" stroke="#000000" stroke-width="1" />   <!-- incorporate both paths into one -->
+                <!-- left edge -->
+                <path d="M 410 30 L 415 150" stroke="#000000" stroke-width="1" fill="transparent" />
+                <!-- bottom edge -->
+                <path d="M 490 225 L 610 230" stroke="#000000" stroke-width="1" fill="transparent" />
+                <!-- outer edge -->
+                <path d="M 410 30 Q 589 51 610 230" stroke="#000000" stroke-width="1" fill="transparent" />
+                <circle cx="589" cy="51" r="2" fill="red" />
+                <!-- inner edge -->
+                <path d="M 415 150 Q 475 165 490 225" stroke="#000000" stroke-width="1" fill="transparent" />
+                <circle cx="475" cy="165" r="2" fill="red" />
 
                 <!-- bottom right button -->
-                <path d="M 330 260 L 440 255" stroke="#000000" stroke-width="1" />
-                <path d="M 260 330 L 255 440" stroke="#000000" stroke-width="1" />  <!-- incorporate both paths into one -->
+                <!-- bottom left edge -->
+                <path d="M 410 450 L 415 330" stroke="#000000" stroke-width="1" fill="transparent" />
+                <!-- top edge -->
+                <path d="M 490 255 L 610 250" stroke="#000000" stroke-width="1" fill="transparent" />
+                <!-- outer edge -->
+                <path d="M 410 450 Q 589 429 610 250" stroke="#000000" stroke-width="1" fill="transparent" />
+                <circle cx="589" cy="429" r="2" fill="red" />
+                <!-- inner edge -->
+                <path d="M 415 330 Q 475 315 490 255" stroke="#000000" stroke-width="1" fill="transparent" />
+                <circle cx="475" cy="315" r="2" fill="red" />
 
             </svg>
         </div>
