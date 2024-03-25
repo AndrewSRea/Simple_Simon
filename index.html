@@ -8,105 +8,45 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <!-- http://thenewcode.com/744/Make-SVG-Responsive -->
-        <!-- <svg version="1.1" id="layer-1" xmlns="http://www.w3.org/2000/svg" 
-            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
-            width="500px" height="500px" viewBox="0 0 500 500"
-            enable-background="new 0 0 500 500" xml:space="preserve"> -->
-        <!-- cleaning up the SVG makes it more responsive (it's also the way MDN does it --
-            except MDN uses `width` and `height`, not a `viewBox`) -->
-        <!-- <svg version="1.1" viewBox="0 0 500 500">
-                <circle fill="#f7941e" stroke="#231f20" stroke-width="10"
-                cx="250" cy="250" r="200" opacity="0.6" />
-             </svg> -->
-        <!-- Three more steps are needed to make it more responsive and compatible with
-             all browsers. -->
-        <!-- 1. Surround the SVG code with a <div> and add a `preserveAspectRatio`
-                attribute and class to the <svg> root element. This will move the SVG illustration
-                to the top of its display container. To complete the presentation, we use a
-                variation of the old `absolute`ly-positioned-element-inside-a-relative-
-                container trick, with an offset padding (see CSS file). -->
-
-        <!-- ONE THING: The responsiveness on this is AMAZING! But find a way to make the diagram 
-             smaller to fit the screen. (Recalculate ALL measurements for a 400x400 viewBox?) 
-             ALSO, find out how to decrease the margins from the diagram to the edges of the screen. -->
         <div class="svg-container">
             <svg version="1.1" viewBox="0 0 800 800" preserveAspectRation="xMinYMin" class="svg-content">
+
                 <!-- outer circle -->
                 <circle fill="transparent" stroke="#000000" stroke-width="1" 
                     cx="400" cy="240" r="220" />
+
                 <!-- inner logo circle -->
                 <circle fill="transparent" stroke="#000000" stroke-width="1"
                     cx="400" cy="240" r="80" />
-
-                <!-- inner edge of buttons -->
-                <circle fill="transparent" stroke="#ff69b4" stroke-width="1" stroke-dasharray="3 2"
-                    cx="400" cy="240" r="90" />
-                <!-- outer edge of buttons -->
-                <circle fill="transparent" stroke="#add8e6" stroke-width="1" stroke-dasharray="3 2"
-                    cx="400" cy="240" r="210" />
                 
-                <!-- these lines are for measurement; remove them when done -->
-                <line x1="400" y1="20" x2="400" y2="460" stroke="#000000" stroke-dasharray="3 2" stroke-width="1" />
-                <line x1="180" y1="240" x2="620" y2="240" stroke="#000000" stroke-dasharray="3 2" stroke-width="1" />
-                <!-- measurement for left button -->
+                <!-- measurements for center of all buttons -->
                 <line x1="400" y1="240" x2="180" y2="20" stroke="#c167ff" stroke-width="1" stroke-dasharray="3 2" />
                 <line x1="400" y1="240" x2="180" y2="460" stroke="#c167ff" stroke-width="1" stroke-dasharray="3 2" />
                 <line x1="400" y1="240" x2="620" y2="20" stroke="#c167ff" stroke-width="1" stroke-dasharray="3 2" />
                 <line x1="400" y1="240" x2="620" y2="460" stroke="#c167ff" stroke-width="1" stroke-dasharray="3 2" />
 
+                <!-- measurement for center of all buttons -->
+                <circle cx="296" cy="136" r="2" fill="red" />
+                <circle cx="296" cy="344" r="2" fill="red" />
+                <circle cx="504" cy="136" r="2" fill="red" />
+                <circle cx="504" cy="344" r="2" fill="red" />
+
                 <!-- paths have to be recalculated for the corner curves but WELL DONE!! -->
                 <!-- top left button -->
-                <path data-key="82" class="button" d="M 190 230 L 310 225 Q 325 165 385 150 L 390 30 Q 211 51 190 230" stroke="#000000" stroke-width="1" fill="transparent" />
-                <!-- bottom edge -->
-                <!-- <path d="M 190 230 L 310 225" stroke="#000000" stroke-width="1" fill="transparent" /> -->
-                <!-- top right edge -->
-                <!-- <path d="M 390 30 L 385 150" stroke="#000000" stroke-width="1" fill="transparent" /> -->
-                <!-- outer edge -->
-                <!-- <path d="M 190 230 Q 211 51 390 30" stroke="#000000" stroke-width="1" fill="transparent" />
-                <circle cx="211" cy="51" r="2" fill="red" /> -->
-                <!-- inner edge -->
-                <!-- <path d="M 310 225 Q 325 165 385 150" stroke="#000000" stroke-width="1" fill="transparent" />
-                <circle cx="325" cy="165" r="2" fill="red" /> -->
+                <path data-key="82" class="button" d="M 190 230 L 310 225 Q 325 165 385 150 L 390 30 Q 211 51 190 230" stroke="#008f00" stroke-width="1" fill="#28c728" />
+                <circle cx="296" cy="136" r="2" fill="red" />
                 
                 <!-- bottom left button -->
-                <path data-key="67" class="button" d="M 190 250 L 310 255 Q 325 315 385 330 L 390 450 Q 211 429 190 250" stroke="#000000" stroke-width="1" fill="transparent" />
-                <!-- top edge -->
-                <!-- <path d="M 190 250 L 310 255" stroke="#000000" stroke-width="1" fill="transparent" /> -->
-                <!-- bottom right edge -->
-                <!-- <path d="M 390 450 L 385 330"  stroke="#000000" stroke-width="1" fill="transparent" /> -->
-                <!-- outer edge -->
-                <!-- <path d="M 190 250 Q 211 429 390 450" stroke="#000000" stroke-width="1" fill="transparent" />
-                <circle cx="211" cy="429" r="2" fill="red" /> -->
-                <!-- inner edge -->
-                <!-- <path d="M 310 255 Q 325 315 385 330" stroke="#000000" stroke-width="1" fill="transparent" />
-                <circle cx="325" cy="315" r="2" fill="red" /> -->
+                <path data-key="67" class="button" d="M 190 250 L 310 255 Q 325 315 385 330 L 390 450 Q 211 429 190 250" stroke="#c2c700" stroke-width="1" fill="#ffff19" />
+                <circle cx="296" cy="344" r="2" fill="red" />
 
                 <!-- top right button -->
-                <path data-key="85" class="button" d="M 410 30 L 415 150 Q 475 165 490 225 L 610 230 Q 589 51 410 30" stroke="#000000" stroke-width="1" fill="transparent" />
-                <!-- left edge -->
-                <!-- <path d="M 410 30 L 415 150" stroke="#000000" stroke-width="1" fill="transparent" /> -->
-                <!-- bottom edge -->
-                <!-- <path d="M 490 225 L 610 230" stroke="#000000" stroke-width="1" fill="transparent" /> -->
-                <!-- outer edge -->
-                <!-- <path d="M 410 30 Q 589 51 610 230" stroke="#000000" stroke-width="1" fill="transparent" />
-                <circle cx="589" cy="51" r="2" fill="red" /> -->
-                <!-- inner edge -->
-                <!-- <path d="M 415 150 Q 475 165 490 225" stroke="#000000" stroke-width="1" fill="transparent" />
-                <circle cx="475" cy="165" r="2" fill="red" /> -->
+                <path data-key="85" class="button" d="M 410 30 L 415 150 Q 475 165 490 225 L 610 230 Q 589 51 410 30" stroke="#dd0000" stroke-width="1" fill="#ff1919" />
+                <circle cx="504" cy="136" r="2" fill="red" />
 
                 <!-- bottom right button -->
-                <path data-key="78" class="button" d="M 410 450 L 415 330 Q 475 315 490 255 L 610 250 Q 589 429 410 450" stroke="#000000" stroke-width="1" fill="transparent" />
-                <!-- bottom left edge -->
-                <!-- <path d="M 410 450 L 415 330" stroke="#000000" stroke-width="1" fill="transparent" /> -->
-                <!-- top edge -->
-                <!-- <path d="M 490 255 L 610 250" stroke="#000000" stroke-width="1" fill="transparent" /> -->
-                <!-- outer edge -->
-                <!-- <path d="M 410 450 Q 589 429 610 250" stroke="#000000" stroke-width="1" fill="transparent" />
-                <circle cx="589" cy="429" r="2" fill="red" /> -->
-                <!-- inner edge -->
-                <!-- <path d="M 415 330 Q 475 315 490 255" stroke="#000000" stroke-width="1" fill="transparent" />
-                <circle cx="475" cy="315" r="2" fill="red" /> -->
+                <path data-key="78" class="button" d="M 410 450 L 415 330 Q 475 315 490 255 L 610 250 Q 589 429 410 450" stroke="#307e98" stroke-width="1" fill="#00a7eb" />
+                <circle cx="504" cy="344" r="2" fill="red" />
 
             </svg>
         </div>
@@ -121,4 +61,103 @@
     </body>
 </html>
 
-<!-- http://thenewcode.com/744/Make-SVG-Responsive -->
+<!--
+    <!-- outer circle -->
+    <circle fill="transparent" stroke="#000000" stroke-width="1" 
+    cx="400" cy="240" r="220" />
+    <!-- inner logo circle -->
+    <circle fill="transparent" stroke="#000000" stroke-width="1"
+        cx="400" cy="240" r="80" />
+
+    <!-- inner edge of buttons -->
+    <!-- <circle fill="transparent" stroke="#ff69b4" stroke-width="1" stroke-dasharray="3 2"
+        cx="400" cy="240" r="90" /> -->
+    <!-- outer edge of buttons -->
+    <!-- <circle fill="transparent" stroke="#add8e6" stroke-width="1" stroke-dasharray="3 2"
+        cx="400" cy="240" r="210" /> -->
+
+    <!-- these lines are for measurement; remove them when done -->
+    <!-- <line x1="400" y1="20" x2="400" y2="460" stroke="#000000" stroke-dasharray="3 2" stroke-width="1" />
+    <line x1="180" y1="240" x2="620" y2="240" stroke="#000000" stroke-dasharray="3 2" stroke-width="1" /> -->
+    <!-- measurement for left button -->
+    <line x1="400" y1="240" x2="180" y2="20" stroke="#c167ff" stroke-width="1" stroke-dasharray="3 2" />
+    <line x1="400" y1="240" x2="180" y2="460" stroke="#c167ff" stroke-width="1" stroke-dasharray="3 2" />
+    <line x1="400" y1="240" x2="620" y2="20" stroke="#c167ff" stroke-width="1" stroke-dasharray="3 2" />
+    <line x1="400" y1="240" x2="620" y2="460" stroke="#c167ff" stroke-width="1" stroke-dasharray="3 2" /> -->
+
+    <!-- paths have to be recalculated for the corner curves but WELL DONE!! -->
+    <!-- top left button 82 fill="#28c728" -->
+    <path data-event-key="r" class="button r" d="M 190 230 L 310 225 Q 325 165 385 150 L 390 30 Q 211 51 190 230" stroke="#008f00" stroke-width="1" fill="#28c728" />
+    <!-- <circle cx="251" cy="91" r="2" fill="red" /> -->
+    <circle cx="296" cy="136" r="2" fill="red" />
+    <!-- <circle cx="336" cy="176" r="2" fill="red" /> -->
+    <!-- bottom edge -->
+    <!-- <path d="M 190 230 L 310 225" stroke="#000000" stroke-width="1" fill="transparent" /> -->
+    <!-- top right edge -->
+    <!-- <path d="M 390 30 L 385 150" stroke="#000000" stroke-width="1" fill="transparent" /> -->
+    <!-- outer edge -->
+    <!-- <path d="M 190 230 Q 211 51 390 30" stroke="#000000" stroke-width="1" fill="transparent" /> -->
+    <!-- <circle cx="211" cy="51" r="2" fill="red" /> -->
+    <!-- inner edge -->
+    <!-- <path d="M 310 225 Q 325 165 385 150" stroke="#000000" stroke-width="1" fill="transparent" /> -->
+    <!-- <circle cx="325" cy="165" r="2" fill="red" /> -->
+
+    <!-- bottom left button 67 -->
+    <path data-event-key="c" class="button c" d="M 190 250 L 310 255 Q 325 315 385 330 L 390 450 Q 211 429 190 250" stroke="#c2c700" stroke-width="1" fill="#ffff19" />
+    <circle cx="296" cy="344" r="2" fill="red" />
+    <!-- top edge -->
+    <!-- <path d="M 310 255 Q 325 315 385 330" stroke="#000000" stroke-width="1" fill="transparent" />
+    <path d="M 385 330 L 390 450"  stroke="#000000" stroke-width="1" fill="transparent" />
+    <path d="M 390 450 Q 211 429 190 250" stroke="#000000" stroke-width="1" fill="transparent" /> -->
+    <!-- bottom right edge -->
+    <!-- <path d="M 390 450 L 385 330"  stroke="#000000" stroke-width="1" fill="transparent" /> -->
+    <!-- outer edge -->
+    <!-- <path d="M 190 250 Q 211 429 390 450" stroke="#000000" stroke-width="1" fill="transparent" />
+    <circle cx="211" cy="429" r="2" fill="red" /> -->
+    <!-- inner edge -->
+    <!-- <path d="M 310 255 Q 325 315 385 330" stroke="#000000" stroke-width="1" fill="transparent" />
+    <circle cx="325" cy="315" r="2" fill="red" /> -->
+
+    <!-- top right button 85 -->
+    <path data-event-key="u" class="button u" d="M 410 30 L 415 150 Q 475 165 490 225 L 610 230 Q 589 51 410 30" stroke="#dd0000" stroke-width="1" fill="#ff1919" />
+    <circle cx="504" cy="136" r="2" fill="red" />
+    <!-- left edge -->
+    <!-- <path d="M 415 150 Q 475 165 490 225" stroke="#000000" stroke-width="1" fill="transparent" />
+    <path d="M 490 225 L 610 230" stroke="#000000" stroke-width="1" fill="transparent" />
+    <path d="M 410 30 Q 589 51 610 230" stroke="#000000" stroke-width="1" fill="transparent" /> -->
+    <!-- bottom edge -->
+    <!-- <path d="M 490 225 L 610 230" stroke="#000000" stroke-width="1" fill="transparent" /> -->
+    <!-- outer edge -->
+    <!-- <path d="M 410 30 Q 589 51 610 230" stroke="#000000" stroke-width="1" fill="transparent" />
+    <circle cx="589" cy="51" r="2" fill="red" /> -->
+    <!-- inner edge -->
+    <!-- <path d="M 415 150 Q 475 165 490 225" stroke="#000000" stroke-width="1" fill="transparent" />
+    <circle cx="475" cy="165" r="2" fill="red" /> -->
+
+    <!-- bottom right button 78 -->
+    <path data-event-key="n" class="button n" d="M 410 450 L 415 330 Q 475 315 490 255 L 610 250 Q 589 429 410 450" stroke="#307e98" stroke-width="1" fill="#00a7eb" />
+    <circle cx="504" cy="344" r="2" fill="red" />
+    <!-- bottom left edge -->
+    <!-- <path d="M 415 330 Q 475 315 490 255" stroke="#000000" stroke-width="1" fill="transparent" />
+    <path d="M 490 255 L 610 250" stroke="#000000" stroke-width="1" fill="transparent" />
+    <path d="M 410 450 Q 589 429 610 250" stroke="#000000" stroke-width="1" fill="transparent" /> -->
+
+    <!-- top edge -->
+    <!-- <path d="M 490 255 L 610 250" stroke="#000000" stroke-width="1" fill="transparent" /> -->
+    <!-- outer edge -->
+    <!-- <path d="M 410 450 Q 589 429 610 250" stroke="#000000" stroke-width="1" fill="transparent" />
+    <circle cx="589" cy="429" r="2" fill="red" /> -->
+    <!-- inner edge -->
+    <!-- <path d="M 415 330 Q 475 315 490 255" stroke="#000000" stroke-width="1" fill="transparent" />
+    <circle cx="475" cy="315" r="2" fill="red" /> -->
+
+    </svg>
+    </div>
+
+    <audio data-event-key="r" src="sounds/clap.wav"></audio>
+    <audio data-event-key="c" src="sounds/hihat.wav"></audio>
+    <audio data-event-key="u" src="sounds/kick.wav"></audio>
+    <audio data-event-key="n" src="sounds/openhat.wav"></audio>
+
+    <script src="index.js"></script>
+-->
