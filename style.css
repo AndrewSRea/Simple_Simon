@@ -31,17 +31,17 @@
   
   .c {
     transform-origin: 296px 344px;
-    transition: all 0.03 ease;
+    transition: all 0.03s ease;
   }
   
   .u {
     transform-origin: 504px 136px;
-    transition: all 0.03 ease;
+    transition: all 0.03s ease;
   }
   
   .n {
     transform-origin: 504px 344px;
-    transition: all 0.03 ease;
+    transition: all 0.03s ease;
   }
   
   .playing {
