@@ -3,7 +3,6 @@
     will have to do some research on how to put a background on an SVG `viewBox`.
     meanwhile, keep the `background` measurements in comment for now.
 */
-
 /* body {
     background: radial-gradient(circle at bottom, rgba(75,0,90,1) 0%, rgba(255,0,255,1) 100%);
 } */
@@ -15,11 +14,38 @@
     padding-bottom: 100%;
     vertical-align: middle;
     overflow: hidden;
-}
-
-.svg-content {
+  }
+  
+  .svg-content {
     display: inline-block;
     position: absolute;
     top: 0;
     left: 0;
-}
+    border: 1px solid hotpink;
+  }
+  
+  .r {
+    transform-origin: 296px 136px;
+    transition: all 0.03s ease;
+  }
+  
+  .c {
+    transform-origin: 296px 344px;
+    transition: all 0.03 ease;
+  }
+  
+  .u {
+    transform-origin: 504px 136px;
+    transition: all 0.03 ease;
+  }
+  
+  .n {
+    transform-origin: 504px 344px;
+    transition: all 0.03 ease;
+  }
+  
+  .playing {
+    transform: scale(103%);
+    fill: #73ff63;
+    box-shadow: 0 0 10px #73ff63;
+  }
