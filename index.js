@@ -1,27 +1,57 @@
-/* *** FINAL PRODUCT -- GITHUB VERSION *** */
+/* *** DISPLAY STRUCTURE IS LIKE THE SIMON GAME *** 
+   BUT THE TRANSITION/TRANSFORM DOESN'T WORK CORRECTLY -- ALL THE BUTTONS TRANSITION
+   TO LIGHT GREEN BUT THE TRANSITION ISN'T REMOVED AFTER THE BUTTONS ARE PRESSED --
+   THIS CAN BE FIXED BY INCORPORATING THE CODE FROM THE `Simple_Simon_Hack` APP
+*/
 
-window.addEventListener('keydown', function(e) {
+let randColors = [];
+
+// function to play sounds and add `playing` class to game buttons for transitions
+function playSound(e) {
   const audio = document.querySelector(`audio[data-event-key="${e.key}"]`);
-  const button = document.querySelector(`.button[data-event-key="${e.key}"]`);
+  const gameButton = document.querySelector(`.gameButton[data-event-key="${e.key}"]`);
   if (!audio) return;
   audio.currentTime = 0;
   audio.play();
-  button.classList.add('playing');
-});
-
-// typing `genRandomNum()` in the console will push a randomly selected color into the
-// `randColors` array (probably should have this array outside this function)
-function genRandomColor() {
-  let randColors = []
-  let randomNum = Math.floor(Math.random() * 4) + 1;
-  if (randomNum === 1) {
-     randColors.push("green");
-  } else if (randomNum === 2) {
-     randColors.push("yellow")
-  } else if (randomNum === 3) {
-     randColors.push("red") 
-  } else {
-     randColors.push("blue")
-  }
-  console.log(randColors);
+  gameButton.classList.add('playing');
 }
+
+// function to remove `playing` class from game buttons
+function removeTransition(e) {
+   if (e.propertyName !== 'transform') return;
+   this.classList.remove('playing');
+}
+
+const allGameButtons = document.querySelectorAll('.gameButton');
+allGameButtons.forEach(gamebutton => gamebutton.addEventListener('transitionend', removeTransition));
+
+window.addEventListener("keydown", playSound);
+
+// YOUR solution for generating a random color and pushing it into an array
+function genRandomColor() {
+   let randomNum = Math.floor(Math.random() * 4) + 1;
+   if (randomNum === 1) {
+      randColors.push("green");
+   } else if (randomNum === 2) {
+      randColors.push("yellow")
+   } else if (randomNum === 3) {
+      randColors.push("red") 
+   } else {
+      randColors.push("blue")
+   }
+   console.log(randColors);
+}
+
+/* ChatGPT solution -- only generates a random color and pushes it into an array
+   upon first opening the app in a browser -- and only once
+*/
+function addRandomColorToArray(array) {
+   const colors = ['green', 'yellow', 'red', 'blue'];
+   const randomIndex = Math.floor(Math.random() * colors.length);
+   array.push(colors[randomIndex]);
+   return array;
+}
+
+let randomArray = [];
+addRandomColorToArray(randomArray);
+console.log(randomArray);
