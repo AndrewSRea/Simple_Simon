@@ -18,6 +18,10 @@
   left: 0;
 }
 
+foreignObject {
+  border: 1px solid hotpink;
+}
+
 .rButton {
   fill: #28c728;
   stroke: #008f00;
