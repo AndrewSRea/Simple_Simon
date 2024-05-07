@@ -19,12 +19,16 @@
                 <circle fill="transparent" stroke="#000000" stroke-width="1"
                     cx="400" cy="240" r="80" />
 
-                <rect class="titleBox" fill="transparent" stroke="#000000" stroke-width="1" x="365" y="175"
-                    width="70" height="30" />
+                <rect x="350" y="250" width="40" height="40" fill="#ffffff" stroke="#000000" stroke-width="1" />
+                <!-- MDN search `text-anchor` -- seems to be the bottom of text -->
+                <!-- Also, want to make text a little bigger -->
+                <text x="375" y="275" font-family="Arial" font-size="20" text-anchor="middle" fill="#000" id="currentScore">0</text>
+                <rect x="410" y="250" width="40" height="40" fill="#ffffff" stroke="#000000" stroke-width="1" />
 
-                <foreignObject x="340" y="210" width="120" height="70">
-
-                </foreignObject>
+                <circle cx="320" cy="240" r="2" fill="red" />
+                <circle cx="400" cy="240" r="2" fill="red" />
+                <circle cx="480" cy="240" r="2" fill="red" />
+                <circle cx="400" cy="320" r="2" fill="red" />
 
                 <!-- measurement lines for inner circle -->
                 <line x1="400" y1="160" x2="400" y2="320" stroke="#c167ff" stroke-width="1" stroke-dasharray="3 2" />
