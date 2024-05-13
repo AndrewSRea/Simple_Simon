@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+
 /* body {
     background: radial-gradient(circle at bottom, rgba(75,0,90,1) 0%, rgba(255,0,255,1) 100%);
 } */
@@ -18,8 +20,8 @@
   left: 0;
 }
 
-foreignObject {
-  border: 1px solid hotpink;
+#title {
+  font-family: "Jersey 25", sans-serif;
 }
 
 .rButton {
