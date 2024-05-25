@@ -24,6 +24,14 @@
   font-family: "Jersey 25", sans-serif;
 }
 
+#toggleRect {
+  transition: fill .2s;
+}
+
+#toggleCircle {
+  transition: cx .2s;
+}
+
 .rButton {
   fill: #28c728;
   stroke: #008f00;
