@@ -6,6 +6,27 @@
 
 let randColors = [];
 
+document.addEventListener("DOMContentLoaded", function() {
+   const toggleRect = document.getElementById("toggleRect");
+   const toggleCircle = document.getElementById("toggleCircle");
+   let isOn = false;
+
+   const toggleButton = () => {
+      isOn = !isOn;
+
+      if (isOn) {
+         toggleRect.setAttribute("fill", "#00ff00");
+         toggleCircle.setAttribute("cx", "407.25");
+      } else {
+         toggleRect.setAttribute("fill", "#ff0000");
+         toggleCircle.setAttribute("cx", "394.75");
+      }
+   };
+
+   toggleRect.addEventListener("click", toggleButton)
+   toggleCircle.addEventListener("click", toggleButton)
+});
+
 // function to play sounds and add `playing` class to game buttons for transitions
 function playSound(e) {
   const audio = document.querySelector(`audio[data-event-key="${e.key}"]`);
